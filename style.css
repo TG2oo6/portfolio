@@ -1,5 +1,7 @@
 html {
+    color-scheme: light dark;
     --color-accent: oklch(65% 50% 0);
+    --border-color: oklch(50% 10% 200 / 40%);
     accent-color: var(--color-accent);
 }
 
@@ -10,7 +12,22 @@ body {
     font: 100%/1.5 system-ui;
     max-width: 100ch;
     margin-inline: auto;
-    padding: 1em;
+    position: relative;
+    padding: 3.5rem 1em 1em;
+    background: canvas;
+    color: canvastext;
+}
+
+.color-scheme {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 80%;
+    color: GrayText;
+}
+
+.color-scheme select {
+    font-family: inherit;
 }
 
 body>img {
@@ -22,7 +39,7 @@ nav {
     display: flex;
     flex-wrap: wrap;
     margin-bottom: 1em;
-    border-bottom: 1px solid oklch(80% 3% 200);
+    border-bottom: 1px solid var(--border-color);
 }
 
 nav a {
@@ -34,7 +51,7 @@ nav a {
 }
 
 nav a.current {
-    border-bottom: 0.4em solid oklch(80% 3% 200);
+    border-bottom: 0.4em solid var(--border-color);
     padding-bottom: 0.1em;
     font-weight: bold;
 }
@@ -113,12 +130,12 @@ h6 {
 }
 
 .resume-page {
-    --resume-navy: oklch(34% 0.045 255);
-    --resume-muted: oklch(47% 0.025 255);
-    --resume-rule: oklch(90% 0.015 255);
-    --resume-surface: oklch(97% 0.01 255);
+    --resume-navy: light-dark(oklch(34% 0.045 255), oklch(82% 0.04 255));
+    --resume-muted: light-dark(oklch(47% 0.025 255), oklch(72% 0.02 255));
+    --resume-rule: light-dark(oklch(90% 0.015 255), oklch(38% 0.02 255));
+    --resume-surface: light-dark(oklch(97% 0.01 255), oklch(27% 0.02 255));
     max-width: 78ch;
-    color: oklch(25% 0.02 255);
+    color: light-dark(oklch(25% 0.02 255), oklch(93% 0.01 255));
 }
 
 .resume-page>h1 {
