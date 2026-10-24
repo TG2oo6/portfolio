@@ -104,7 +104,11 @@ form button {
     grid-row: span 3;
 }
 
-.projects h2 {
+.projects h2,
+.projects h3,
+.projects h4,
+.projects h5,
+.projects h6 {
     margin: 0;
 }
 
@@ -113,6 +117,31 @@ form button {
     width: 100%;
     max-width: 100%;
     height: auto;
+}
+
+.profile-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(9em, 1fr));
+    gap: 1em;
+    margin: 0;
+}
+
+.profile-stats div {
+    padding: 1em;
+    border: 1px solid var(--border-color);
+    border-radius: 0.5em;
+}
+
+.profile-stats dt {
+    color: GrayText;
+    font-size: 0.9em;
+}
+
+.profile-stats dd {
+    margin: 0.25em 0 0;
+    font-size: 1.5em;
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
 }
 
 h1 {

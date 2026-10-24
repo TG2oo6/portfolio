@@ -1,0 +1,135 @@
+[
+  {
+    "title": "DSC 106 Lab 1: Personal Portfolio",
+    "description": "Created the initial personal portfolio website to introduce my background and present my work as a UC San Diego Mathematics and Data Science student.",
+    "image": "images/image for dsc106 lab1.png",
+    "alt": "Personal portfolio image created for DSC 106 Lab 1",
+    "year": 2026
+  },
+  {
+    "title": "DSC 106 Lab 2: Responsive Portfolio",
+    "description": "Styled the portfolio with a responsive project grid, shared navigation, and a consistent visual design.",
+    "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+    "alt": "",
+    "year": 2026
+  },
+  {
+    "title": "DSC 106 Lab 3: JavaScript Enhancements",
+    "description": "Added JavaScript-powered navigation, a persistent color-scheme selector, and contact form behavior to the portfolio.",
+    "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+    "alt": "",
+    "year": 2026
+  },
+  {
+    "title": "Limit Order Book Simulator",
+    "description": "Built a price-time priority limit order book from LOBSTER tick data across 10 NASDAQ equities. Modeled adverse selection across 50,000+ trade events and implemented an inventory-adjusted market-making strategy.",
+    "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+    "alt": "",
+    "year": 2026
+  },
+  {
+    "title": "TWAP/VWAP Execution Engine",
+    "description": "Implemented TWAP and VWAP execution algorithms on intraday data across 30 S&P 500 equities, and evaluated their execution costs across simulated market regimes.",
+    "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+    "alt": "",
+    "year": 2026
+  },
+  {
+    "title": "AI Investment Research Platform",
+    "description": "Built an investment research platform that extracts CIO equity-market insights from institutional reports, applies NLP to quantify sentiment and sector themes, and maps market views to ETF exposures.",
+    "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+    "alt": "",
+    "year": 2025
+  },
+  {
+    "title": "Sports Sensor Analytics",
+    "description": "Engineered features from wearable sports sensor data and transformed sensor signals into structured performance metrics for sports analytics.",
+    "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+    "alt": "",
+    "year": 2025
+  },
+  {
+    "title": "Lorem ipsum dolor sit.",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+    "alt": "",
+    "year": 2026
+  },
+  {
+    "title": "Adipiscing elit sed do.",
+    "description": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+    "alt": "",
+    "year": 2026
+  },
+  {
+    "title": "Tempor incididunt ut labore.",
+    "description": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+    "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+    "alt": "",
+    "year": 2026
+  },
+  {
+    "title": "Dolore magna aliqua enim.",
+    "description": "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+    "alt": "",
+    "year": 2026
+  },
+  {
+    "title": "Minim veniam quis nostrud.",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+    "alt": "",
+    "year": 2026
+  },
+  {
+    "title": "Exercitation ullamco laboris nisi.",
+    "description": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+    "alt": "",
+    "year": 2026
+  },
+  {
+    "title": "Aliquip ex ea commodo.",
+    "description": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+    "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+    "alt": "",
+    "year": 2026
+  },
+  {
+    "title": "Reprehenderit in voluptate velit.",
+    "description": "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+    "alt": "",
+    "year": 2026
+  },
+  {
+    "title": "Occaecat cupidatat non proident.",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+    "alt": "",
+    "year": 2026
+  },
+  {
+    "title": "Fugiat nulla pariatur excepteur.",
+    "description": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+    "alt": "",
+    "year": 2026
+  },
+  {
+    "title": "Sint occaecat cupidatat non.",
+    "description": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+    "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+    "alt": "",
+    "year": 2026
+  },
+  {
+    "title": "Deserunt mollit anim id.",
+    "description": "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+    "alt": "",
+    "year": 2026
+  }
+]

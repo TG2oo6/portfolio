@@ -1,5 +1,67 @@
 console.log('IT’S ALIVE!');
 
+export async function fetchJSON(url) {
+  try {
+    const response = await fetch(url);
+    if (!response.ok) {
+      throw new Error(`Request failed with status ${response.status}`);
+    }
+    return await response.json();
+  } catch (error) {
+    console.error(`Failed to fetch JSON from ${url}:`, error);
+    return null;
+  }
+}
+
+export async function fetchGitHubData(username) {
+  return await fetchJSON(
+    `https://api.github.com/users/${encodeURIComponent(username)}`,
+  );
+}
+
+function escapeHTML(value) {
+  return String(value).replace(/[&<>"']/g, (character) => {
+    const entities = {
+      '&': '&amp;',
+      '<': '&lt;',
+      '>': '&gt;',
+      '"': '&quot;',
+      "'": '&#39;',
+    };
+    return entities[character];
+  });
+}
+
+export function renderProjects(
+  projects,
+  containerElement,
+  headingLevel = 'h2',
+) {
+  if (!(containerElement instanceof Element)) {
+    throw new TypeError('containerElement must be a DOM element.');
+  }
+  if (typeof headingLevel !== 'string' || !/^h[1-6]$/.test(headingLevel)) {
+    throw new TypeError('headingLevel must be a heading from h1 to h6.');
+  }
+  if (!Array.isArray(projects)) {
+    throw new TypeError('projects must be an array.');
+  }
+
+  containerElement.replaceChildren();
+
+  for (const project of projects) {
+    const article = document.createElement('article');
+    const imageURL = new URL(project.image, import.meta.url).href;
+    const imageAlt = project.alt ?? project.title;
+    article.innerHTML = `
+      <${headingLevel}>${escapeHTML(project.title)}</${headingLevel}>
+      <img src="${escapeHTML(imageURL)}" alt="${escapeHTML(imageAlt)}">
+      <p>${escapeHTML(project.description)}</p>
+    `;
+    containerElement.append(article);
+  }
+}
+
 function $$(selector, context = document) {
   return Array.from(context.querySelectorAll(selector));
 }
