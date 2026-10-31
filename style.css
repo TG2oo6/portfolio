@@ -101,7 +101,7 @@ form button {
 .projects article {
     display: grid;
     grid-template-rows: subgrid;
-    grid-row: span 3;
+    grid-row: span 4;
 }
 
 .projects h2,
@@ -117,6 +117,94 @@ form button {
     width: 100%;
     max-width: 100%;
     height: auto;
+}
+
+.project-year {
+    margin: 0;
+    color: GrayText;
+    font-family: Baskerville, serif;
+    font-variant-numeric: oldstyle-nums;
+}
+
+.projects-search {
+    display: grid;
+    gap: 0.35em;
+    margin-block: 1em;
+}
+
+.projects-search span {
+    color: GrayText;
+    font-size: 0.9em;
+}
+
+.searchBar {
+    box-sizing: border-box;
+    width: 100%;
+    min-width: 0;
+    padding: 0.6em 0.75em;
+}
+
+.projects-visualization {
+    display: flex;
+    align-items: center;
+    gap: 2em;
+    margin-block: 1.5em;
+}
+
+#projects-pie-plot {
+    display: block;
+    flex: 0 1 20em;
+    width: min(100%, 20em);
+    height: auto;
+    overflow: visible;
+}
+
+#projects-pie-plot path {
+    cursor: pointer;
+    transition: opacity 300ms ease, fill 300ms ease;
+}
+
+#projects-pie-plot:has(path:hover) path:not(:hover) {
+    opacity: 0.5;
+}
+
+.legend {
+    display: grid;
+    flex: 1;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 9em), 1fr));
+    gap: 0.5em;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    min-width: 0;
+    padding: 0.5em;
+    border: 1px solid var(--border-color);
+    border-radius: 0.35em;
+}
+
+.legend-item .swatch {
+    flex: 0 0 0.9em;
+    width: 0.9em;
+    height: 0.9em;
+    border-radius: 0.15em;
+    background: var(--color);
+}
+
+.legend-item.selected {
+    border-color: var(--color-accent);
+    background: color-mix(in srgb, var(--color-accent) 15%, transparent);
+    font-weight: 600;
+}
+
+#projects-pie-plot path.selected {
+    stroke: var(--color-accent);
+    stroke-width: 2;
 }
 
 .profile-stats {
@@ -288,6 +376,17 @@ h6 {
 }
 
 @media (max-width: 38em) {
+    .projects-visualization {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 1em;
+    }
+
+    #projects-pie-plot {
+        align-self: center;
+        flex-basis: auto;
+    }
+
     .resume-page .awards ul {
         grid-template-columns: 1fr;
     }

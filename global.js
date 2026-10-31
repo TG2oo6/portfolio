@@ -57,6 +57,7 @@ export function renderProjects(
       <${headingLevel}>${escapeHTML(project.title)}</${headingLevel}>
       <img src="${escapeHTML(imageURL)}" alt="${escapeHTML(imageAlt)}">
       <p>${escapeHTML(project.description)}</p>
+      <p class="project-year">${escapeHTML(project.year)}</p>
     `;
     containerElement.append(article);
   }
