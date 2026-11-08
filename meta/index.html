@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="An interactive analysis of the code and commit history behind this portfolio.">
+    <title>Meta / Code Analysis - Thalesh Gupta</title>
+    <link rel="stylesheet" href="../style.css">
+    <script type="module" src="../global.js"></script>
+    <script type="module" src="./main.js"></script>
+</head>
+
+<body class="meta-page">
+    <header class="meta-header">
+        <p class="meta-eyebrow">Portfolio / Repository insights</p>
+        <h1>Code, over time.</h1>
+        <p>
+            A closer look at the code behind this portfolio: how it has grown, when commits
+            happen, and which languages make up a selected stretch of work.
+        </p>
+    </header>
+
+    <main>
+        <section aria-labelledby="summary-heading">
+            <h2 id="summary-heading">Codebase at a glance</h2>
+            <dl id="commit-stats" class="meta-stats" aria-live="polite"></dl>
+        </section>
+
+        <section aria-labelledby="chart-heading" class="meta-chart-section">
+            <div class="meta-section-heading">
+                <div>
+                    <p class="meta-eyebrow">Explore commit activity</p>
+                    <h2 id="chart-heading">Commits by Time of Day</h2>
+                </div>
+                <p class="meta-chart-hint">Drag across the chart to select commits.</p>
+            </div>
+            <div id="chart" class="meta-chart" aria-live="polite">
+                <p class="meta-loading">Loading repository history…</p>
+            </div>
+            <p id="selection-count" class="meta-selection-count" aria-live="polite">No commits selected</p>
+        </section>
+
+        <section aria-labelledby="language-heading" class="meta-language-section">
+            <div>
+                <p class="meta-eyebrow">Linked selection</p>
+                <h2 id="language-heading">Language breakdown</h2>
+                <p class="meta-language-hint">Select commits in the chart to compare their line types.</p>
+            </div>
+            <dl id="language-breakdown" class="stats" aria-live="polite"></dl>
+        </section>
+    </main>
+
+    <dl id="commit-tooltip" class="info tooltip" aria-hidden="true"></dl>
+</body>
+
+</html>

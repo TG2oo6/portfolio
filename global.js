@@ -72,6 +72,7 @@ const pages = [
   { url: 'projects/', title: 'Projects' },
   { url: 'resume/', title: 'Resume' },
   { url: 'contact/', title: 'Contact' },
+  { url: 'meta/', title: 'Meta/Code Analysis' },
   { url: 'https://github.com/tg2oo6', title: 'GitHub' },
 ];
 

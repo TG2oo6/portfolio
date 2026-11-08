@@ -375,6 +375,246 @@ h6 {
     background: var(--resume-surface);
 }
 
+.meta-page {
+    --color-accent: #D83995;
+    --border-color: light-dark(rgb(5 147 198 / 25%), rgb(5 147 198 / 45%));
+    --meta-blue: #0593C6;
+    --meta-pink: #D83995;
+    --meta-text: canvastext;
+    --meta-muted: light-dark(#596b76, #afc0c9);
+    --meta-surface: light-dark(#ffffff, #17242c);
+    --meta-surface-raised: light-dark(#f2faff, #20323d);
+    --meta-rule: light-dark(rgb(5 147 198 / 22%), rgb(5 147 198 / 38%));
+    max-width: 110ch;
+    color: var(--meta-text);
+}
+
+.meta-page .meta-header {
+    max-width: 68ch;
+    margin: 1.2em 0 2.5em;
+}
+
+.meta-page .meta-eyebrow {
+    margin: 0 0 0.5em;
+    color: var(--meta-blue);
+    font-size: 0.76em;
+    font-weight: 750;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.meta-page .meta-header h1 {
+    margin: 0;
+    color: var(--meta-blue);
+    font-size: clamp(2.7rem, 8vw, 5rem);
+    letter-spacing: -0.055em;
+}
+
+.meta-page .meta-header>p:last-child {
+    max-width: 62ch;
+    margin: 0.8em 0 0;
+    color: var(--meta-muted);
+    font-size: 1.08em;
+}
+
+.meta-page main>section {
+    margin-block: 2.5em;
+}
+
+.meta-page main h2 {
+    margin: 0;
+    font-size: clamp(1.45rem, 4vw, 2rem);
+}
+
+.meta-page .meta-stats,
+.meta-page #language-breakdown {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 12em), 1fr));
+    gap: 0.8em;
+    margin: 1.15em 0 0;
+}
+
+.meta-page .meta-stats>div,
+.meta-page #language-breakdown>div {
+    min-width: 0;
+    padding: 1em 1.1em;
+    border: 1px solid var(--meta-rule);
+    border-radius: 0.7em;
+    background: var(--meta-surface);
+    box-shadow: 0 0.35em 1.1em rgb(5 50 70 / 6%);
+}
+
+.meta-page .meta-stats dt,
+.meta-page #language-breakdown dt {
+    color: var(--meta-muted);
+    font-size: 0.86em;
+}
+
+.meta-page .meta-stats dd,
+.meta-page #language-breakdown dd {
+    margin: 0.3em 0 0;
+    color: var(--meta-blue);
+    font-size: clamp(1.15em, 2.2vw, 1.55em);
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+    overflow-wrap: anywhere;
+}
+
+.meta-page .meta-section-heading {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 1em;
+    margin-bottom: 0.8em;
+}
+
+.meta-page .meta-chart-hint,
+.meta-page .meta-language-hint,
+.meta-page .meta-selection-count {
+    margin: 0.45em 0 0;
+    color: var(--meta-muted);
+    font-size: 0.94em;
+}
+
+.meta-page .meta-chart {
+    overflow: hidden;
+    border: 1px solid var(--meta-rule);
+    border-radius: 0.85em;
+    background: var(--meta-surface);
+    box-shadow: 0 0.6em 1.8em rgb(5 50 70 / 7%);
+}
+
+.meta-page .meta-loading {
+    margin: 0;
+    padding: 3em 1em;
+    color: var(--meta-muted);
+    text-align: center;
+}
+
+.meta-page .meta-chart svg {
+    display: block;
+    width: 100%;
+    height: auto;
+    overflow: visible;
+    touch-action: pan-y;
+}
+
+.meta-page .meta-grid line {
+    stroke: var(--meta-rule);
+    stroke-dasharray: 2 5;
+}
+
+.meta-page .meta-grid .tick text {
+    display: none;
+}
+
+.meta-page .meta-y-axis path,
+.meta-page .meta-y-axis line,
+.meta-page .meta-x-axis path,
+.meta-page .meta-x-axis line {
+    stroke: var(--meta-muted);
+}
+
+.meta-page .meta-y-axis text,
+.meta-page .meta-x-axis text {
+    fill: var(--meta-muted);
+    font: 12px system-ui, sans-serif;
+}
+
+.meta-page .meta-axis-label {
+    fill: var(--meta-muted);
+    font: 600 13px system-ui, sans-serif;
+}
+
+.meta-page .meta-dot {
+    fill: var(--meta-blue);
+    fill-opacity: 0.7;
+    stroke: var(--meta-surface);
+    stroke-width: 1.5px;
+    cursor: crosshair;
+    transition: fill 150ms ease, fill-opacity 150ms ease, stroke 150ms ease;
+}
+
+.meta-page .meta-dot.selected {
+    fill: var(--meta-pink);
+    fill-opacity: 1;
+}
+
+.meta-page .meta-dot:focus-visible {
+    stroke: var(--meta-pink);
+    stroke-width: 3px;
+    outline: none;
+}
+
+.meta-page .meta-brush .overlay {
+    fill: transparent;
+    cursor: crosshair;
+}
+
+.meta-page .meta-brush .selection {
+    fill: var(--meta-pink);
+    fill-opacity: 0.12;
+    stroke: var(--meta-pink);
+    stroke-width: 1.5px;
+    stroke-dasharray: 5 4;
+}
+
+.meta-page #selection-count {
+    min-height: 1.5em;
+    margin-top: 0.65em;
+    color: var(--meta-pink);
+    font-weight: 650;
+}
+
+.meta-page .meta-language-section {
+    padding: 1.4em;
+    border: 1px solid var(--meta-rule);
+    border-radius: 0.85em;
+    background: var(--meta-surface-raised);
+}
+
+.meta-page #language-breakdown:empty::after {
+    content: 'No selected commits yet.';
+    grid-column: 1 / -1;
+    color: var(--meta-muted);
+    font-size: 0.92em;
+}
+
+.meta-page .tooltip {
+    position: fixed;
+    z-index: 20;
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 0.25em 0.9em;
+    max-width: min(22em, calc(100vw - 1em));
+    margin: 0;
+    padding: 0.85em 1em;
+    border: 1px solid var(--meta-rule);
+    border-radius: 0.65em;
+    background: var(--meta-surface);
+    box-shadow: 0 0.5em 1.5em rgb(0 0 0 / 18%);
+    color: var(--meta-text);
+    font-size: 0.86em;
+    pointer-events: auto;
+    visibility: hidden;
+}
+
+.meta-page .tooltip dt {
+    color: var(--meta-muted);
+}
+
+.meta-page .tooltip dd {
+    margin: 0;
+    font-weight: 600;
+    text-align: right;
+    overflow-wrap: anywhere;
+}
+
+.meta-page .tooltip a {
+    color: var(--meta-pink);
+    pointer-events: auto;
+}
+
 @media (max-width: 38em) {
     .projects-visualization {
         flex-direction: column;
@@ -394,5 +634,23 @@ h6 {
     .resume-page .skills>p {
         grid-template-columns: minmax(6.5em, 8em) minmax(0, 1fr);
         gap: 0.5em;
+    }
+
+    .meta-page .meta-section-heading {
+        align-items: start;
+        flex-direction: column;
+        gap: 0.35em;
+    }
+
+    .meta-page .meta-language-section {
+        padding: 1em;
+    }
+
+    .meta-page .meta-chart {
+        overflow-x: auto;
+    }
+
+    .meta-page .meta-chart svg {
+        min-width: 680px;
     }
 }
