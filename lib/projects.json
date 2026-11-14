@@ -1,5 +1,22 @@
 [
   {
+    "title": "Bikewatching",
+    "description": "Interactive visualization of 261K+ Bluebikes rides across 453 Boston-area stations, combining Mapbox and D3.js to explore time-dependent traffic volumes and directional flows.",
+    "alt": "Interactive Bikewatching visualization of Bluebikes traffic in Boston and Cambridge",
+    "image": "images/bikewatching.png",
+    "links": [
+      {
+        "label": "Live site",
+        "url": "https://tg2oo6.github.io/bikewatching/"
+      },
+      {
+        "label": "GitHub",
+        "url": "https://github.com/TG2oo6/bikewatching"
+      }
+    ],
+    "year": 2026
+  },
+  {
     "title": "DSC 106 Lab 1: Personal Portfolio",
     "description": "Created the initial personal portfolio website to introduce my background and present my work as a UC San Diego Mathematics and Data Science student.",
     "image": "images/image for dsc106 lab1.png",

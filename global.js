@@ -51,13 +51,30 @@ export function renderProjects(
 
   for (const project of projects) {
     const article = document.createElement('article');
-    const imageURL = new URL(project.image, import.meta.url).href;
     const imageAlt = project.alt ?? project.title;
+    const imageURL = project.image
+      ? escapeHTML(new URL(project.image, import.meta.url).href)
+      : null;
+    const imageHTML = imageURL
+      ? `<img src="${imageURL}" alt="${escapeHTML(imageAlt)}">`
+      : '';
+    const linksHTML = (project.links ?? [])
+      .map(
+        (link) =>
+          `<a href="${escapeHTML(link.url)}" target="_blank" rel="noopener noreferrer">` +
+          `${escapeHTML(link.label)}</a>`,
+      )
+      .join(' · ');
+    const linksMarkup = linksHTML
+      ? `<span class="project-links">· ${linksHTML}</span>`
+      : '';
+    const linksInYear = linksMarkup ? ` ${linksMarkup}` : '';
+    article.classList.toggle('has-thumbnail', Boolean(project.image));
     article.innerHTML = `
       <${headingLevel}>${escapeHTML(project.title)}</${headingLevel}>
-      <img src="${escapeHTML(imageURL)}" alt="${escapeHTML(imageAlt)}">
+      ${imageHTML}
       <p>${escapeHTML(project.description)}</p>
-      <p class="project-year">${escapeHTML(project.year)}</p>
+      <p class="project-year">${escapeHTML(project.year)}${linksInYear}</p>
     `;
     containerElement.append(article);
   }

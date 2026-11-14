@@ -104,6 +104,10 @@ form button {
     grid-row: span 4;
 }
 
+.projects article:not(.has-thumbnail) {
+    grid-row: span 3;
+}
+
 .projects h2,
 .projects h3,
 .projects h4,
@@ -124,6 +128,16 @@ form button {
     color: GrayText;
     font-family: Baskerville, serif;
     font-variant-numeric: oldstyle-nums;
+}
+
+.project-links {
+    color: canvastext;
+    font-family: system-ui;
+    font-variant-numeric: normal;
+}
+
+.project-links a {
+    color: var(--color-accent);
 }
 
 .projects-search {
