@@ -5,7 +5,9 @@
   "directories": {
     "lib": "lib"
   },
-  "scripts": {},
+  "scripts": {
+    "loc": "npx elocuent -d . -o meta/loc.csv"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",

@@ -546,7 +546,17 @@ h6 {
     stroke: var(--meta-surface);
     stroke-width: 1.5px;
     cursor: crosshair;
-    transition: fill 150ms ease, fill-opacity 150ms ease, stroke 150ms ease;
+    transition:
+        cx calc(var(--r) * 20ms),
+        cy calc(var(--r) * 20ms),
+        r calc(var(--r) * 20ms),
+        fill 150ms ease,
+        fill-opacity 150ms ease,
+        stroke 150ms ease;
+
+    @starting-style {
+        r: 0;
+    }
 }
 
 .meta-page .meta-dot.selected {
@@ -627,6 +637,179 @@ h6 {
 .meta-page .tooltip a {
     color: var(--meta-pink);
     pointer-events: auto;
+}
+
+.meta-page .meta-time-filter {
+    display: flex;
+    align-items: baseline;
+    gap: 1em;
+    margin-top: 1em;
+}
+
+.meta-page #commit-progress {
+    flex: 1;
+    min-width: 8em;
+}
+
+.meta-page #commit-time {
+    margin-left: auto;
+    color: var(--meta-muted);
+    text-align: right;
+}
+
+.meta-page #scrolly-1 {
+    position: relative;
+    display: flex;
+    gap: 1rem;
+}
+
+.meta-page #scrolly-1 > * {
+    flex: 1;
+    min-width: 0;
+}
+
+.meta-page #scatter-story {
+    position: relative;
+}
+
+.meta-page #scatter-plot {
+    position: sticky;
+    top: 0;
+    height: 80vh;
+    overflow-y: auto;
+    align-self: flex-start;
+}
+
+.meta-page #scatter-story .step {
+    min-height: 20vh;
+    padding: 8vh 0 50vh;
+    color: var(--meta-muted);
+    transition: color 180ms ease;
+}
+
+.meta-page #scatter-story .step.is-active {
+    color: var(--meta-text);
+}
+
+.meta-page #scatter-story .step p {
+    max-width: 38ch;
+    margin: 0;
+    font-size: clamp(1.05em, 1.7vw, 1.35em);
+    line-height: 1.6;
+}
+
+.meta-page #scatter-story a {
+    color: var(--meta-pink);
+    font-weight: 700;
+}
+
+.meta-page .meta-files-section {
+    margin-top: 3em;
+}
+
+.meta-page .meta-file-legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5em 1em;
+    margin: 1em 0;
+    padding: 0;
+    list-style: none;
+}
+
+.meta-page .meta-file-legend li {
+    display: flex;
+    align-items: center;
+    gap: 0.4em;
+    color: var(--meta-muted);
+    font-size: 0.85em;
+}
+
+.meta-page .meta-file-legend-swatch {
+    width: 0.75em;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: var(--color);
+}
+
+.meta-page #files {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    gap: 0;
+    margin: 0;
+}
+
+.meta-page #files > div {
+    display: grid;
+    grid-column: 1 / -1;
+    grid-template-columns: subgrid;
+    padding: 0.7em 0;
+    border-bottom: 1px solid var(--meta-rule);
+}
+
+.meta-page #files dt {
+    grid-column: 1;
+    min-width: 0;
+    overflow-wrap: anywhere;
+}
+
+.meta-page #files small {
+    display: block;
+    color: var(--meta-muted);
+    font-size: 0.82em;
+    font-weight: 400;
+    opacity: 0.8;
+}
+
+.meta-page #files dd {
+    display: flex;
+    grid-column: 2;
+    flex-wrap: wrap;
+    align-items: start;
+    align-content: start;
+    gap: 0.15em;
+    padding-top: 0.6em;
+    margin: 0;
+}
+
+.meta-page .loc {
+    display: flex;
+    width: 0.5em;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: var(--color);
+    opacity: 1;
+    transform: scale(1);
+    transition: opacity 250ms ease, transform 250ms ease;
+
+    @starting-style {
+        opacity: 0;
+        transform: scale(0);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .meta-page .meta-dot,
+    .meta-page .loc,
+    .meta-page #scatter-story .step {
+        transition: none;
+    }
+}
+
+@media (max-width: 760px) {
+    .meta-page #scrolly-1 {
+        flex-direction: column;
+    }
+
+    .meta-page #scatter-plot {
+        order: -1;
+        width: 100%;
+        height: 75vh;
+        z-index: 2;
+    }
+
+    .meta-page #scatter-story {
+        order: 1;
+    }
 }
 
 @media (max-width: 38em) {

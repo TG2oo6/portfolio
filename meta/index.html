@@ -24,30 +24,47 @@
     <main>
         <section aria-labelledby="summary-heading">
             <h2 id="summary-heading">Codebase at a glance</h2>
+            <div class="meta-time-filter">
+                <label for="commit-progress">Show commits until:</label>
+                <input type="range" id="commit-progress" min="0" max="100" value="100">
+                <time id="commit-time"></time>
+            </div>
             <dl id="commit-stats" class="meta-stats" aria-live="polite"></dl>
         </section>
 
-        <section aria-labelledby="chart-heading" class="meta-chart-section">
-            <div class="meta-section-heading">
-                <div>
-                    <p class="meta-eyebrow">Explore commit activity</p>
-                    <h2 id="chart-heading">Commits by Time of Day</h2>
-                </div>
-                <p class="meta-chart-hint">Drag across the chart to select commits.</p>
-            </div>
-            <div id="chart" class="meta-chart" aria-live="polite">
-                <p class="meta-loading">Loading repository history…</p>
-            </div>
-            <p id="selection-count" class="meta-selection-count" aria-live="polite">No commits selected</p>
-        </section>
+        <div id="scrolly-1">
+            <div id="scatter-story"></div>
+            <div id="scatter-plot">
+                <section aria-labelledby="chart-heading" class="meta-chart-section">
+                    <div class="meta-section-heading">
+                        <div>
+                            <p class="meta-eyebrow">Explore commit activity</p>
+                            <h2 id="chart-heading">Commits by Time of Day</h2>
+                        </div>
+                        <p class="meta-chart-hint">Drag across the chart to select commits.</p>
+                    </div>
+                    <div id="chart" class="meta-chart" aria-live="polite">
+                        <p class="meta-loading">Loading repository history…</p>
+                    </div>
+                    <p id="selection-count" class="meta-selection-count" aria-live="polite">No commits selected</p>
+                </section>
 
-        <section aria-labelledby="language-heading" class="meta-language-section">
-            <div>
-                <p class="meta-eyebrow">Linked selection</p>
-                <h2 id="language-heading">Language breakdown</h2>
-                <p class="meta-language-hint">Select commits in the chart to compare their line types.</p>
+                <section aria-labelledby="language-heading" class="meta-language-section">
+                    <div>
+                        <p class="meta-eyebrow">Linked selection</p>
+                        <h2 id="language-heading">Language breakdown</h2>
+                        <p class="meta-language-hint">Select commits in the chart to compare their line types.</p>
+                    </div>
+                    <dl id="language-breakdown" class="stats" aria-live="polite"></dl>
+                </section>
             </div>
-            <dl id="language-breakdown" class="stats" aria-live="polite"></dl>
+        </div>
+
+        <section class="meta-files-section" aria-labelledby="files-heading">
+            <p class="meta-eyebrow">Lines of code over time</p>
+            <h2 id="files-heading">The race for the biggest file</h2>
+            <ul id="file-legend" class="meta-file-legend" aria-label="Line type legend"></ul>
+            <dl id="files"></dl>
         </section>
     </main>
 
